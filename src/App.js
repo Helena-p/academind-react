@@ -10,12 +10,25 @@ class App extends Component {
             { name: "Stephanie", age: 26 },
         ],
     };
+
+    switchNameHandler = () => {
+        //console.log("was clicked");
+        //DONT DO THIS this.state.persons[0].name = 'Maximilian';
+        this.setState({
+            persons: [
+                { name: "Maximilian", age: 28 },
+                { name: "Manu", age: 29 },
+                { name: "Stephanie", age: 37 },
+            ],
+        });
+    };
+
     render() {
         return (
             <div className="App">
                 <h1>Hi, I'm a React App</h1>
                 <p>This is really working!</p>
-                <button>Switch Name</button>
+                <button onClick={this.switchNameHandler}>Switch Name</button>
                 <Person
                     name={this.state.persons[0].name} // this refers to the class App
                     age={this.state.persons[0].age}
